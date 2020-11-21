@@ -10,8 +10,8 @@ variables:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockerRegistry'
-    repository: '$(dockerRegistry)/$(name)'
+    containerRegistry: 'prasadashila'
+    repository: '$(prasadashila)/$(exampleApp)'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
 
