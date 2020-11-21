@@ -1,0 +1,10 @@
+dependencies:
+- name: mssql-linux
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 0.8.0
+  persistence:
+    enabled: true
+    existingDataClaim: pvc-mssql-data
+    existingTransactionLogClaim: pvc-mssql-log
+    existingBackupClaim: pvc-mssql-backup
+    existingMasterClaim: pvc-mssql-master

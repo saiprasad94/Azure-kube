@@ -1,0 +1,22 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerRegistry'
+    repository: '$(dockerRegistry)/$(name)'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/charts'
+    ArtifactName: 'charts'
+    publishLocation: 'Container'

@@ -1,0 +1,21 @@
+fullnameOverride: exampleapp
+replicaCount: 1
+image:
+  repository: mkisielewski/exampleapp
+  tag: 22
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+  # This uses credentials from secret "myRegistryKeySecretName".
+  # - name: myRegistryKeySecretName
+service:
+  type: ClusterIP
+  port: 80
+probes:
+  enabled: true
+secrets: {}
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
+acceptEula:
+  value: "y"
