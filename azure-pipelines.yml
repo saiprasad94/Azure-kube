@@ -13,7 +13,7 @@ steps:
     containerRegistry: 'prasadashila'
     repository: '$(prasadashila)/$(exampleApp)'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '*/Dockerfile'
 
 - task: PublishBuildArtifacts@1
   inputs:
